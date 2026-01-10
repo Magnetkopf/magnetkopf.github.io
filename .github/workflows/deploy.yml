@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 permissions:
   contents: write
 
@@ -21,10 +21,14 @@ jobs:
         with:
           node-version: 24
 
-      - run: |
-          npm install pnpm -g
-          pnpm i
-          pnpm build
+      - name: Install pnpm
+        run: npm install pnpm -g
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build
+        run: pnpm build-only
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
