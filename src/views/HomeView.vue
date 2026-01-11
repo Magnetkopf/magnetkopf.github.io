@@ -19,42 +19,42 @@ const links = [
 
 <template>
   <div class="flex flex-col items-center justify-center space-y-16">
-    
+
     <!-- Hero Section -->
     <section class="text-center space-y-6 animate-fade-in-down">
       <div class="inline-block p-1 rounded-full bg-gradient-to-tr from-primary-500 to-violet-500 mb-4 opacity-80 blur-[1px]"></div>
-      <h1 class="text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-br from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent pb-2">
+      <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-br from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent pb-2">
         MAGNETKOPF
       </h1>
       <p class="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
         Digital explorer, vector artisan, and homelab enthusiast.
       </p>
-      
+
       <div class="pt-8 flex justify-center gap-4">
         <a href="#links">
-            <Button label="Explore" icon="mdi mdi-arrow-down" rounded severity="secondary" outlined class="!px-8 !py-3" /> 
+            <Button label="Explore" icon="mdi mdi-arrow-down" rounded severity="secondary" outlined class="!px-8 !py-3" />
         </a>
       </div>
     </section>
 
     <!-- Links Section -->
     <section id="links" class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-8">
-      <a 
-        v-for="link in links" 
-        :key="link.name" 
-        :href="link.url" 
+      <a
+        v-for="link in links"
+        :key="link.name"
+        :href="link.url"
         target="_blank"
         class="group relative overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 p-8 transition-all duration-300 hover:border-zinc-600 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1"
       >
         <div class="absolute inset-0 bg-gradient-to-br from-zinc-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
+
         <div class="relative z-10 flex flex-col items-center text-center space-y-4">
           <div class="p-4 rounded-full bg-zinc-950 border border-zinc-800 group-hover:border-zinc-600 group-hover:scale-110 transition-all duration-300">
             <i :class="[link.icon, 'text-4xl text-zinc-400 group-hover:text-white transition-colors']"></i>
           </div>
           <h2 class="text-2xl font-bold text-zinc-100">{{ link.name }}</h2>
           <p class="text-zinc-400 group-hover:text-zinc-300 transition-colors">{{ link.description }}</p>
-          
+
           <div class="pt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
             <span class="text-sm font-medium text-primary-400 flex items-center gap-1">
               Visit <i class="mdi mdi-arrow-right"></i>
@@ -74,7 +74,7 @@ const links = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
+
         <!-- Backend -->
         <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300 flex flex-col items-center space-y-4">
           <h3 class="text-lg font-semibold text-zinc-300">Back-end</h3>
