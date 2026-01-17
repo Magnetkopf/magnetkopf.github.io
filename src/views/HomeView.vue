@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Button from 'primevue/button';
+import { ParticlesBg } from '@/components/ui/particles-bg';
 
 const links = [
   {
@@ -15,27 +16,49 @@ const links = [
     description: 'My personal notes and thoughts.'
   }
 ];
+
+const scrollToLinks = () => {
+  const element = document.getElementById('links');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <template>
   <div class="flex flex-col items-center justify-center space-y-16">
 
     <!-- Hero Section -->
-    <section class="text-center space-y-6 animate-fade-in-down">
-      <div class="inline-block p-1 rounded-full bg-gradient-to-tr from-primary-500 to-violet-500 mb-4 opacity-80 blur-[1px]"></div>
-      <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-br from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent pb-2">
-        MAGNETKOPF
-      </h1>
-      <p class="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
-        Digital explorer, vector artisan, and homelab enthusiast.
-      </p>
+    <ParticlesBg
+      class="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-zinc-950 md:shadow-xl"
+      :quantity="100"
+      :ease="100"
+      color="#FFF"
+      :staticity="10"
+      refresh
+    >
+      <!-- Hero Section -->
+      <section class="text-center space-y-6 animate-fade-in-down px-4">
+        <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-br from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent pb-2">
+          MAGNETKOPF
+        </h1>
+        <p class="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
+          Digital explorer, vector artisan, and homelab enthusiast.
+        </p>
 
-      <div class="pt-8 flex justify-center gap-4">
-        <a href="#links">
-            <Button label="Explore" icon="mdi mdi-arrow-down" rounded severity="secondary" outlined class="!px-8 !py-3" />
-        </a>
-      </div>
-    </section>
+        <div class="pt-8 flex justify-center gap-4">
+          <Button 
+            label="Explore" 
+            icon="mdi mdi-arrow-down" 
+            rounded 
+            severity="secondary" 
+            outlined 
+            class="!px-8 !py-3" 
+            @click="scrollToLinks" 
+          />
+        </div>
+      </section>
+    </ParticlesBg>
 
     <!-- Links Section -->
     <section id="links" class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-8">
