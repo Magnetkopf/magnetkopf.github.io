@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import Button from 'primevue/button';
 
 const router = useRouter();
 const route = useRoute();
@@ -17,6 +16,11 @@ const items = [
         label: 'Contact',
         icon: 'mdi mdi-email-outline',
         to: '/contact'
+    },
+    {
+        label: 'Rants',
+        icon: 'mdi mdi-shaker',
+        to: '/rants'
     }
 ];
 
