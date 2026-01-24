@@ -14,13 +14,17 @@ import { ParticlesBg } from '@/components/ui/particles-bg';
       refresh
     >
   <div class="flex flex-col items-center justify-center min-h-[50vh] space-y-8 animate-fade-in-down py-12">
-    <div class="text-center space-y-4">
-      <h1 class="text-4xl md:text-5xl font-black text-white">Contact</h1>
-      <p class="text-zinc-400">Get in touch with me.</p>
-    </div>
+    <div class="text-center space-y-4 mb-16 animate-fade-in-down">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white">
+                CONTACT
+            </h1>
+            <p class="text-zinc-400 max-w-xl mx-auto text-lg">
+                Get in touch with me.
+            </p>
+        </div>
 
     <div class="p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col space-y-6 max-w-md w-full shadow-xl shadow-black/50">
-      
+
       <!-- Discord -->
       <div class="flex items-center p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/50 hover:border-zinc-700 transition-colors">
           <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-[#5865F2]/10 text-[#5865F2]">

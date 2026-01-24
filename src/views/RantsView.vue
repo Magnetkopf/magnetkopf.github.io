@@ -34,13 +34,10 @@ const rants = ref([
 </script>
 
 <template>
-    <div class="min-h-screen w-full bg-zinc-950 px-4 py-20 flex flex-col items-center">
+    <div class="min-h-screen w-full bg-zinc-950 px-4 py-12 flex flex-col items-center">
 
         <!-- Header -->
         <div class="text-center space-y-4 mb-16 animate-fade-in-down">
-            <div class="inline-flex items-center justify-center p-3 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
-                <i class="mdi mdi-shaker text-3xl text-red-500"></i>
-            </div>
             <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white">
                 SALTY <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">RANTS</span>
             </h1>

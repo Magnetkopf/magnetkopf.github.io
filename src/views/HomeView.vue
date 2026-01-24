@@ -38,12 +38,11 @@ const scrollToLinks = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-zinc-950 font-sans text-white">
+  <div class="min-h-screen bg-zinc-950 font-sans text-white dark">
 
     <!-- Hero Section -->
     <AuroraBackground
       class="
-        dark
         w-full
         !h-[60svh] md:!h-[80vh]
         !items-start !justify-end
@@ -55,17 +54,17 @@ const scrollToLinks = () => {
       "
     >
       <div class="relative z-10 w-full max-w-5xl space-y-6 animate-fade-in-up">
-        <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-black leading-none">
+        <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-white leading-none">
           Magnetkopf
         </h1>
-        <p class="text-lg sm:text-xl md:text-2xl text-zinc-600 max-w-2xl font-light leading-relaxed">
+        <p class="text-lg sm:text-xl md:text-2xl text-zinc-100 max-w-2xl font-light leading-relaxed">
           Digital explorer, vector artisan, and homelab enthusiast.
         </p>
 
         <div class="pt-8">
           <Button
             @click="scrollToLinks"
-            class="rounded-full px-8 py-6 text-base font-medium bg-black text-white hover:bg-zinc-600 transition-transform duration-300 hover:scale-105"
+            class="rounded-full px-8 py-6 text-base font-medium bg-zinc-100 text-black hover:bg-zinc-300 transition-transform duration-300 hover:scale-105"
           >
             Explore
           </Button>
