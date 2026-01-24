@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import TelegramIcon from '@/assets/icons/telegram.svg?component'
 import DiscordIcon from '@/assets/icons/discord.svg?component'
+import { ParticlesBg } from '@/components/ui/particles-bg';
 </script>
 
 <template>
+  <ParticlesBg
+      class="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-zinc-950 md:shadow-xl"
+      :quantity="100"
+      :ease="100"
+      color="#FFF"
+      :staticity="10"
+      refresh
+    >
   <div class="flex flex-col items-center justify-center min-h-[50vh] space-y-8 animate-fade-in-down py-12">
     <div class="text-center space-y-4">
       <h1 class="text-4xl md:text-5xl font-black text-white">Contact</h1>
@@ -39,6 +48,7 @@ import DiscordIcon from '@/assets/icons/discord.svg?component'
 
     </div>
   </div>
+  </ParticlesBg>
 </template>
 
 <style scoped>

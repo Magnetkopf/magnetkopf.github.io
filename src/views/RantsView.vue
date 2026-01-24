@@ -31,17 +31,11 @@ const rants = ref([
         tags: ['app','self-hosted']
     }
 ]);
-
-const getSaltIcon = (level: number) => {
-    if (level >= 5) return 'mdi mdi-emoticon-angry text-red-500';
-    if (level >= 3) return 'mdi mdi-emoticon-dead text-orange-400';
-    return 'mdi mdi-emoticon-neutral text-yellow-400';
-};
 </script>
 
 <template>
     <div class="min-h-screen w-full bg-zinc-950 px-4 py-20 flex flex-col items-center">
-        
+
         <!-- Header -->
         <div class="text-center space-y-4 mb-16 animate-fade-in-down">
             <div class="inline-flex items-center justify-center p-3 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
@@ -57,14 +51,14 @@ const getSaltIcon = (level: number) => {
 
         <!-- Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
-            <div 
-                v-for="(rant, index) in rants" 
+            <div
+                v-for="(rant, index) in rants"
                 :key="rant.topic"
                 class="group relative"
                 :style="{ animationDelay: `${index * 100}ms` }"
             >
                 <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-                
+
                 <div class="relative h-full bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-600 transition-all duration-300 flex flex-col hover:-translate-y-1 hover:shadow-2xl">
                     <!-- Card Header -->
                     <div class="flex items-start justify-between mb-4">
@@ -83,8 +77,8 @@ const getSaltIcon = (level: number) => {
 
                     <!-- Footer / Tags -->
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span 
-                            v-for="tag in rant.tags" 
+                        <span
+                            v-for="tag in rant.tags"
                             :key="tag"
                             class="px-2 py-1 text-xs font-medium rounded-md bg-zinc-950 text-zinc-500 border border-zinc-800 group-hover:border-zinc-700 transition-colors"
                         >
@@ -94,7 +88,7 @@ const getSaltIcon = (level: number) => {
                 </div>
             </div>
         </div>
-        
+
     </div>
 </template>
 

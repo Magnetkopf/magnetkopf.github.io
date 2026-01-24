@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const router = useRouter();
 const route = useRoute();
@@ -46,22 +47,22 @@ watch(route, () => {
 
 <template>
   <div class="min-h-screen flex flex-col font-sans selection:bg-primary-500 selection:text-white bg-zinc-950 text-white">
-    
+
     <!-- Navbar -->
     <header class="sticky top-0 z-50 transition-all duration-300 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                
+
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer group" @click="router.push('/')">
                      <div class="font-bold text-xl tracking-tight text-white transition-opacity">
-                        MAGNETKOPF
+                        🧲🧀
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
                 <nav class="hidden md:flex space-x-1">
-                    <a v-for="item in items" 
+                    <a v-for="item in items"
                        :key="item.label"
                        @click="router.push(item.to)"
                        class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer flex items-center space-x-2 text-zinc-400 hover:text-white hover:bg-white/5"
@@ -98,7 +99,7 @@ watch(route, () => {
     >
         <div v-if="isMobileMenuOpen" class="fixed inset-0 z-40 bg-zinc-950/95 backdrop-blur-3xl md:hidden pt-24 px-6 flex flex-col">
             <nav class="flex flex-col space-y-4">
-                 <a v-for="item in items" 
+                 <a v-for="item in items"
                        :key="item.label"
                        @click="router.push(item.to)"
                        class="p-4 rounded-2xl text-lg font-medium transition-all duration-200 cursor-pointer flex items-center space-x-4 border border-transparent"
@@ -109,7 +110,7 @@ watch(route, () => {
                         <i class="mdi mdi-arrow-right ml-auto opacity-50"></i>
                 </a>
             </nav>
-            
+
             <div class="mt-auto pb-12 text-center">
                  <p class="text-zinc-600 text-sm">© {{ new Date().getFullYear() }} Magnetkopf</p>
             </div>
@@ -120,12 +121,12 @@ watch(route, () => {
     <main class="flex-grow">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <RouterView v-slot="{ Component }">
-          <transition 
-            enter-active-class="transition ease-out duration-300" 
-            enter-from-class="opacity-0 translate-y-4" 
-            enter-to-class="opacity-100 translate-y-0" 
-            leave-active-class="transition ease-in duration-200" 
-            leave-from-class="opacity-100 translate-y-0" 
+          <transition
+            enter-active-class="transition ease-out duration-300"
+            enter-from-class="opacity-0 translate-y-4"
+            enter-to-class="opacity-100 translate-y-0"
+            leave-active-class="transition ease-in duration-200"
+            leave-from-class="opacity-100 translate-y-0"
             leave-to-class="opacity-0 -translate-y-4"
             mode="out-in"
           >

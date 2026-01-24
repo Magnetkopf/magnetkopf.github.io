@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ParticlesBg } from '@/components/ui/particles-bg';
+import { Button } from '@/components/ui/button'
+import { AuroraBackground } from '@/components/ui/aurora-background';
 
 const links = [
   {
@@ -25,102 +26,100 @@ const scrollToLinks = () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center space-y-16">
+  <div class="min-h-screen bg-zinc-950 font-sans text-white">
 
     <!-- Hero Section -->
-    <ParticlesBg
-      class="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-zinc-950 md:shadow-xl"
-      :quantity="100"
-      :ease="100"
-      color="#FFF"
-      :staticity="10"
-      refresh
+    <AuroraBackground
+      class="
+        dark
+        w-full
+        !h-[60svh] md:!h-[80vh]
+        !items-start !justify-end
+        px-6 pb-12
+        md:px-20 md:pb-32
+        overflow-hidden text-left
+        rounded-4xl
+        md:rounded-6xl
+      "
     >
-      <!-- Hero Section -->
-      <section class="text-center space-y-6 animate-fade-in-down px-4">
-        <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-br from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent pb-2">
-          MAGNETKOPF
+      <div class="relative z-10 w-full max-w-5xl space-y-6 animate-fade-in-up">
+        <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-black leading-none">
+          Magnetkopf
         </h1>
-        <p class="text-xl text-zinc-400 max-w-2xl mx-auto font-light">
+        <p class="text-lg sm:text-xl md:text-2xl text-zinc-600 max-w-2xl font-light leading-relaxed">
           Digital explorer, vector artisan, and homelab enthusiast.
         </p>
 
-        <div class="pt-8 flex justify-center gap-4">
-          <Button 
-            label="Explore" 
-            icon="mdi mdi-arrow-down" 
-            rounded 
-            severity="secondary" 
-            outlined 
-            class="!px-8 !py-3" 
-            @click="scrollToLinks" 
-          />
+        <div class="pt-8">
+          <Button
+            @click="scrollToLinks"
+            class="rounded-full px-8 py-6 text-base font-medium bg-black text-white hover:bg-zinc-600 transition-transform duration-300 hover:scale-105"
+          >
+            Explore
+          </Button>
         </div>
-      </section>
-    </ParticlesBg>
+      </div>
+    </AuroraBackground>
 
     <!-- Links Section -->
-    <section id="links" class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-8">
-      <a
-        v-for="link in links"
-        :key="link.name"
-        :href="link.url"
-        target="_blank"
-        class="group relative overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 p-8 transition-all duration-300 hover:border-zinc-600 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1"
-      >
-        <div class="absolute inset-0 bg-gradient-to-br from-zinc-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-          <div class="p-4 rounded-full bg-zinc-950 border border-zinc-800 group-hover:border-zinc-600 group-hover:scale-110 transition-all duration-300">
-            <i :class="[link.icon, 'text-4xl text-zinc-400 group-hover:text-white transition-colors']"></i>
-          </div>
-          <h2 class="text-2xl font-bold text-zinc-100">{{ link.name }}</h2>
-          <p class="text-zinc-400 group-hover:text-zinc-300 transition-colors">{{ link.description }}</p>
-
-          <div class="pt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-            <span class="text-sm font-medium text-primary-400 flex items-center gap-1">
-              Visit <i class="mdi mdi-arrow-right"></i>
-            </span>
-          </div>
+    <section id="links" class="relative z-10 px-6 py-24 md:px-16 bg-zinc-950">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-12 flex items-center gap-4">
+          <div class="h-px w-8 bg-zinc-700"></div>
+          <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500">Destinations</h2>
         </div>
-      </a>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <a
+            v-for="link in links"
+            :key="link.name"
+            :href="link.url"
+            target="_blank"
+            class="group relative overflow-hidden rounded-2xl bg-zinc-900/50 border border-zinc-800 p-8 md:p-12 transition-all duration-300 hover:bg-zinc-900 hover:border-zinc-700 hover:shadow-2xl"
+          >
+            <div class="flex flex-col items-start gap-4">
+               <div class="p-3 rounded-lg bg-zinc-950 border border-zinc-800 group-hover:border-zinc-600 transition-colors">
+                  <i :class="[link.icon, 'text-3xl text-zinc-400 group-hover:text-white transition-colors']"></i>
+               </div>
+               <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">{{ link.name }}</h3>
+                  <p class="text-zinc-400 group-hover:text-zinc-300 transition-colors">{{ link.description }}</p>
+               </div>
+
+               <div class="mt-auto pt-6 flex items-center text-sm font-medium text-zinc-500 group-hover:text-white transition-colors">
+                 Visit <i class="mdi mdi-arrow-top-right ml-1"></i>
+               </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="w-full max-w-4xl px-4 py-12 space-y-12 animate-fade-in-down" style="animation-delay: 0.2s;">
-      <div class="text-center space-y-4">
-        <h2 class="text-4xl md:text-5xl font-black text-white relative inline-block">
-          Technical Arsenal
-          <div class="absolute -bottom-2 delay-300 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-50"></div>
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Backend -->
-        <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300 flex flex-col items-center space-y-4">
-          <h3 class="text-lg font-semibold text-zinc-300">Back-end</h3>
-          <div class="h-px w-12 bg-zinc-800"></div>
-          <img src="https://skillicons.dev/icons?i=go,php" alt="Backend Skills" class="h-12 hover:scale-110 transition-transform duration-300" />
+    <section class="relative z-10 px-6 py-24 md:px-16 bg-zinc-950 border-t border-zinc-900">
+      <div class="max-w-7xl mx-auto">
+         <div class="mb-12 flex items-center gap-4">
+          <div class="h-px w-8 bg-zinc-700"></div>
+          <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500">Technical Arsenal</h2>
         </div>
 
-        <!-- Frontend -->
-        <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300 flex flex-col items-center space-y-4">
-          <h3 class="text-lg font-semibold text-zinc-300">Front-end</h3>
-          <div class="h-px w-12 bg-zinc-800"></div>
-          <img src="https://skillicons.dev/icons?i=pnpm,vue" alt="Frontend Skills" class="h-12 hover:scale-110 transition-transform duration-300" />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Common card style -->
+          <div v-for="(category, index) in [
+              { title: 'Back-end', icons: 'go,php' },
+              { title: 'Front-end', icons: 'pnpm,vue' },
+              { title: 'Design', icons: 'figma' }
+            ]"
+            :key="index"
+            class="p-8 rounded-2xl bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-700 transition-all duration-300 flex flex-col items-start space-y-4"
+          >
+            <h3 class="text-lg font-semibold text-zinc-300">{{ category.title }}</h3>
+            <div class="w-full h-px bg-zinc-800"></div>
+            <img :src="`https://skillicons.dev/icons?i=${category.icons}`" :alt="category.title" class="h-10 opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
         </div>
 
-        <!-- Graphical -->
-        <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300 flex flex-col items-center space-y-4">
-          <h3 class="text-lg font-semibold text-zinc-300">Design</h3>
-          <div class="h-px w-12 bg-zinc-800"></div>
-          <img src="https://skillicons.dev/icons?i=figma" alt="Design Skills" class="h-12 hover:scale-110 transition-transform duration-300" />
-        </div>
-
-      </div>
-
-      <!-- Podman Fan Badge -->
+        <!-- Podman Fan Badge -->
       <div class="flex justify-center pt-8">
         <div class="group relative inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-900/20 to-pink-900/20 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 cursor-default">
           <span class="text-2xl mr-3 group-hover:rotate-12 transition-transform duration-300">🦭</span>
@@ -130,25 +129,21 @@ const scrollToLinks = () => {
           <div class="absolute inset-0 rounded-full bg-purple-500/5 blur-md -z-10 group-hover:bg-purple-500/10 transition-colors"></div>
         </div>
       </div>
-
+      </div>
     </section>
-
-
 
   </div>
 </template>
 
 <style scoped>
-.animate-fade-in-down {
-  animation: fadeInDown 0.8s ease-out;
+.animate-fade-in-up {
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
+@keyframes fadeInUp {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
