@@ -14,6 +14,18 @@ const links = [
     url: 'https://memos.magnetkopf.com/',
     icon: 'mdi mdi-notebook-edit',
     description: 'My personal notes and thoughts.'
+  },
+  {
+    name: 'Dribbble',
+    url: 'https://dribbble.com/magnetkopf',
+    icon: 'mdi mdi-circle-outline',
+    description: 'Here are my design works.'
+  },
+  {
+    name: 'HuggingFace',
+    url: 'https://huggingface.co/magnetkopf',
+    icon: 'mdi mdi-hand-wave',
+    description: 'Although nothing there yet....'
   }
 ];
 
