@@ -2,6 +2,7 @@
 import TelegramIcon from '@/assets/icons/telegram.svg?component'
 import DiscordIcon from '@/assets/icons/discord.svg?component'
 import { ParticlesBg } from '@/components/ui/particles-bg';
+import { ArrowRight } from 'lucide-vue-next';
 </script>
 
 <template>
@@ -46,7 +47,7 @@ import { ParticlesBg } from '@/components/ui/particles-bg';
             <p class="text-lg font-semibold text-white">@magnetkopf</p>
           </div>
           <div class="text-zinc-600 group-hover:text-[#229ED9] transition-colors">
-            <i class="mdi mdi-arrow-right text-xl"></i>
+            <ArrowRight class="w-5 h-5" />
           </div>
       </a>
 

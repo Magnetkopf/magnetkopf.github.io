@@ -1,30 +1,31 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
 import { AuroraBackground } from '@/components/ui/aurora-background';
+import { Github, NotebookPen, Dribbble, Hand, ArrowUpRight } from 'lucide-vue-next';
 
 const links = [
   {
     name: 'GitHub',
     url: 'https://github.com/magnetkopf',
-    icon: 'mdi mdi-github',
+    icon: Github,
     description: 'Check out my code and projects.'
   },
   {
     name: 'Memos',
     url: 'https://memos.magnetkopf.com/',
-    icon: 'mdi mdi-notebook-edit',
+    icon: NotebookPen,
     description: 'My personal notes and thoughts.'
   },
   {
     name: 'Dribbble',
     url: 'https://dribbble.com/magnetkopf',
-    icon: 'mdi mdi-circle-outline',
+    icon: Dribbble,
     description: 'Here are my design works.'
   },
   {
     name: 'HuggingFace',
     url: 'https://huggingface.co/magnetkopf',
-    icon: 'mdi mdi-hand-wave',
+    icon: Hand,
     description: 'Although nothing there yet....'
   }
 ];
@@ -90,7 +91,7 @@ const scrollToLinks = () => {
           >
             <div class="flex flex-col items-start gap-4">
                <div class="p-3 rounded-lg bg-zinc-950 border border-zinc-800 group-hover:border-zinc-600 transition-colors">
-                  <i :class="[link.icon, 'text-3xl text-zinc-400 group-hover:text-white transition-colors']"></i>
+                  <component :is="link.icon" class="w-8 h-8 text-zinc-400 group-hover:text-white transition-colors" />
                </div>
                <div>
                   <h3 class="text-2xl font-bold text-white mb-2">{{ link.name }}</h3>
@@ -98,7 +99,7 @@ const scrollToLinks = () => {
                </div>
 
                <div class="mt-auto pt-6 flex items-center text-sm font-medium text-zinc-500 group-hover:text-white transition-colors">
-                 Visit <i class="mdi mdi-arrow-top-right ml-1"></i>
+                 Visit <ArrowUpRight class="ml-1 w-4 h-4" />
                </div>
             </div>
           </a>

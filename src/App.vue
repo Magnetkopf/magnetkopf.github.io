@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Home, Mail, MessageSquare, ArrowRight } from 'lucide-vue-next';
 
 const router = useRouter();
 const route = useRoute();
@@ -10,17 +10,17 @@ const isMobileMenuOpen = ref(false);
 const items = [
     {
         label: 'Home',
-        icon: 'mdi mdi-home-outline',
+        icon: Home,
         to: '/'
     },
     {
         label: 'Contact',
-        icon: 'mdi mdi-email-outline',
+        icon: Mail,
         to: '/contact'
     },
     {
         label: 'Rants',
-        icon: 'mdi mdi-shaker',
+        icon: MessageSquare,
         to: '/rants'
     }
 ];
@@ -68,7 +68,7 @@ watch(route, () => {
                        class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer flex items-center space-x-2 text-zinc-400 hover:text-white hover:bg-white/5"
                        :class="{ '!text-primary-400 !bg-primary-500/10': route.path === item.to }"
                     >
-                        <i :class="[item.icon, 'text-lg']"></i>
+                        <component :is="item.icon" class="w-5 h-5" />
                         <span>{{ item.label }}</span>
                     </a>
                 </nav>
@@ -105,9 +105,9 @@ watch(route, () => {
                        class="p-4 rounded-2xl text-lg font-medium transition-all duration-200 cursor-pointer flex items-center space-x-4 border border-transparent"
                        :class="route.path === item.to ? 'bg-primary-500/20 text-primary-400 border-primary-500/20' : 'text-zinc-400 hover:text-white hover:bg-white/5'"
                     >
-                        <i :class="[item.icon, 'text-2xl']"></i>
+                        <component :is="item.icon" class="w-6 h-6" />
                         <span>{{ item.label }}</span>
-                        <i class="mdi mdi-arrow-right ml-auto opacity-50"></i>
+                        <ArrowRight class="ml-auto opacity-50 w-5 h-5" />
                 </a>
             </nav>
 
