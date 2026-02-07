@@ -115,12 +115,13 @@ const scrollToLinks = () => {
           <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500">Technical Arsenal</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Common card style -->
           <div v-for="(category, index) in [
-              { title: 'Back-end', icons: 'go,php' },
-              { title: 'Front-end', icons: 'pnpm,vue' },
-              { title: 'Design', icons: 'figma' }
+              { title: 'Backend',   icons: 'go,php' },
+              { title: 'Frontend',  icons: 'vue,react,flutter' },
+              { title: 'Design',    icons: 'figma,sketchup' },
+              { title: 'Infra',     icons: 'linux,ipfs,git' },
             ]"
             :key="index"
             class="p-8 rounded-2xl bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-700 transition-all duration-300 flex flex-col items-start space-y-4"
