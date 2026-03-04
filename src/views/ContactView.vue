@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import TelegramIcon from '@/assets/icons/telegram.svg?component'
 import DiscordIcon from '@/assets/icons/discord.svg?component'
 import { ParticlesBg } from '@/components/ui/particles-bg';
 import { ArrowRight } from 'lucide-vue-next';
+
+useHead({
+  title: 'Contact',
+})
 </script>
 
 <template>

@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { ref } from 'vue';
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
+
+useHead({
+  title: 'Rants',
+})
 
 const rants = ref([
     {
